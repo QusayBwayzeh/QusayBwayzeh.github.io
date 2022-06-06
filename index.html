@@ -6,7 +6,7 @@
         <meta charset="utf-8">
         <meta name="author" content="QusayAlbwayzeh">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> -->
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta name="keywords" content="Qusay Albwayzeh">
         <meta name="description" content="Qusay Albwayzeh">
         <!-- title -->
@@ -769,7 +769,11 @@
 		//x.controls = false;
         </script>
 		
-		<script> $('head').append('<title>Qusay Albwayzeh</title>'); </script>
+		<script>
+if(window.top != window.self){
+    top.location.href = document.location.href;
+}
+</script>
 
         <!-- end body -->
     </body>
