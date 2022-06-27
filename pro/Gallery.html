@@ -1,0 +1,590 @@
+﻿<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Motaz Albtoush - Official Website</title>
+
+
+		<!-- Meta -->
+		<meta charset="utf-8"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+		<meta name="description" content="Motaz Website"/>
+		<meta name="keywords" content="HTML5, CSS3, Bootsrtrap, Responsive, Photography, Portfolio, Template, Theme, Website, Themetorium"/>
+		<meta name="author" content="Motaz"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1"/>
+		<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon"/>
+		<link rel="icon" href="img/favicon.ico" type="image/x-icon"/>
+		<link href="css/font.css?family=Poppins:300,400,500,600,700" rel="stylesheet"/> 
+		<link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css"/>  
+		<!-- Libs and Plugins CSS -->
+		<link rel="stylesheet" href="vendor/animsition/css/animsition.min.css"/>  
+		<link rel="stylesheet" href="vendor/fontawesome/css/fontawesome-all.min.css"/> 
+		<link rel="stylesheet" href="vendor/lightgallery/css/lightgallery.min.css"/>  
+		<link rel="stylesheet" href="vendor/owl-carousel/css/owl.carousel.min.css"/>  
+		<link rel="stylesheet" href="vendor/owl-carousel/css/owl.theme.default.min.css"/> 
+		<link rel="stylesheet" href="vendor/ytplayer/css/jquery.mb.YTPlayer.min.css"/> 
+		<link rel="stylesheet" href="vendor/animate.min.css"/>  
+        <link href="css/Customize.css" rel="stylesheet" />
+		<!-- Template master CSS -->
+		<link rel="stylesheet" href="css/helper.css"/>
+		<link rel="stylesheet" href="css/theme.css"/>
+		<link rel="stylesheet" href="demo-panel/css/demo-panel.css"/>
+		<link rel="stylesheet" href="css/dark-style.css"/>
+		<link rel="stylesheet" href="css/round-style.css"/>
+		<link rel="alternate stylesheet" media="screen" title="skin-red" href="css/color-skins/skin-red.css"/>
+		<link rel="alternate stylesheet" media="screen" title="skin-green" href="css/color-skins/skin-green.css"/>
+		<link rel="alternate stylesheet" media="screen" title="skin-blue" href="css/color-skins/skin-blue.css"/>
+		<link rel="alternate stylesheet" media="screen" title="skin-orange" href="css/color-skins/skin-orange.css"/>
+		<link rel="alternate stylesheet" media="screen" title="skin-purple" href="css/color-skins/skin-purple.css"/>
+		<link rel="alternate stylesheet" media="screen" title="skin-pink" href="css/color-skins/skin-pink.css"/>
+		<link rel="alternate stylesheet" media="screen" title="skin-brown" href="css/color-skins/skin-brown.css"/>
+ 
+</head>
+<body>
+    
+
+        		<!-- BEGIN DEMO PANEL (FOR DEMO SITE ONLY!) -->
+		<div class="demo-panel">
+			<div class="demo-panel-trigger">
+				<span class="dpt-icon"></span>
+				<span class="dpt-close"></span>
+			</div>
+			<div class="demo-panel-inner">
+				<div class="demo-panel-header">Settings</div>
+				<div class="demo-panel-content">
+					<div class="demo-panel-block light-sw-block">
+						<h2 class="dp-heading">Light Switcher:</h2>
+						<div class="light-switcher">
+							<div class="lsw-btn light-lsw-btn" title="Day Mode"></div>
+							<div class="lsw-btn dark-lsw-btn" title="Night Mode"></div>
+						</div>
+					</div>
+					<div class="demo-panel-block rtl-sw-block">
+						<h2 class="dp-heading">Round Style:</h2>
+						<div class="round-switcher">
+							<div class="roundsw-btn ltr-roundsw-btn" title="Round style OFF">OFF</div>
+							<div class="roundsw-btn round-roundsw-btn" title="Round style ON">ON</div>
+						</div>
+					</div>
+					<div class="demo-panel-block rtl-sw-block">
+						<h2 class="dp-heading">Direction:</h2>
+						<div class="rtl-switcher">
+							<div class="rtlsw-btn ltr-rtlsw-btn" title="Left to right mode">LTR</div>
+							<div class="rtlsw-btn rtl-rtlsw-btn" title="Right to left mode">RTL</div>
+						</div>
+					</div>
+					<div class="demo-panel-block">
+						<h2 class="dp-heading">Color Switcher:</h2>
+						<div class="skin-switcher">
+							<a class="sksw-btn sksw-btn-default" href="javascript:chooseStyle('none', 60)" title="Default Skin"></a>
+							<a class="sksw-btn sksw-btn-red" href="javascript:chooseStyle('skin-red', 60)" data-class="tt-skin-red" title="Red Skin"></a>
+							<a class="sksw-btn sksw-btn-green" href="javascript:chooseStyle('skin-green', 60)" data-class="tt-skin-green" title="Green Skin"></a>
+							<a class="sksw-btn sksw-btn-blue" href="javascript:chooseStyle('skin-blue', 60)" data-class="tt-skin-blue" title="Blue Skin"></a>
+							<a class="sksw-btn sksw-btn-orange" href="javascript:chooseStyle('skin-orange', 60)" data-class="tt-skin-orange" title="Orange Skin"></a>
+							<a class="sksw-btn sksw-btn-purple" href="javascript:chooseStyle('skin-purple', 60)" data-class="tt-skin-purple" title="Purple Skin"></a>
+							<a class="sksw-btn sksw-btn-pink" href="javascript:chooseStyle('skin-pink', 60)" data-class="tt-skin-pink" title="Pink Skin"></a>
+							<a class="sksw-btn sksw-btn-brown" href="javascript:chooseStyle('skin-brown', 60)" data-class="tt-skin-brown" title="Brown Skin"></a>
+						</div>
+					</div>
+					<!-- <a class="demo-panel-btn" href="Admin/AdminAbout.html" target="_blank" title="Manage Website">Manage Website</a> -->
+				</div>
+			</div>
+		</div>
+		<!-- END DEMO PANEL (FOR DEMO SITE ONLY!) -->
+
+
+        	<!-- =================
+		//// Begin header //// 
+		======================
+		* Use class "header-show-hide-on-scroll" to hide header on scroll down and show on scroll up.
+		* Use class "header-fixed-top" to set header to fixed position.
+		* Use class "header-transparent" to set header to transparent.
+		* Use class "menu-align-left" to align menu to left.
+		* Use class "menu-align-right" to align menu to right.
+		* Use class "menu-align-center" to align menu to center (do not use with header classes!).
+		-->
+		<header id="header" class="menu-align-right">
+
+			<!-- Begin header inner -->
+			<div class="header-inner tt-wrap"> <!-- add/remove class "tt-wrap" to enable/disable element boxed layout (class "tt-boxed" is required in <body> tag! ) -->
+
+				<!-- Begin logo 
+				================ -->
+				<div id="logo">
+<!--					<a href="Default.html" class="logo-dark"><img src="img\logo-dark.png" alt="logo"></a>
+					<a href="Default.html" class="logo-light"><img src="img\logo-light.png" alt="logo"></a>-->
+
+					<!-- for small screens -->
+					<!--<a href="Default.html" class="logo-dark-m"><img src="img\logo-dark-m.png" alt="logo"></a>
+					<a href="Default.html" class="logo-light-m"><img src="img\logo-light-m.png" alt="logo"></a>-->
+                    <a href="Default.html" class="logo-dark"><h2>Motaz</h2></a>
+					<a href="Default.html" class="logo-light"><h2>Motaz</h2></a>
+
+					<!-- for small screens -->
+					<a href="Default.html" class="logo-dark-m"><h4>Motaz</h4></a>
+					<a href="Default.html" class="logo-light-m"><h4>Motaz</h4></a>
+				</div>
+				<!-- End logo -->
+
+				<!-- ====================
+				//// Begin main menu ////
+				===================== -->
+				<nav class="tt-main-menu">
+
+					<!-- Begin mobile menu toggle button -->
+					<div id="tt-m-menu-toggle-btn">
+						<span></span>
+					</div>
+					<!-- End mobile menu toggle button -->
+
+					<!-- Begin menu tools 
+					====================== -->
+					<div class="tt-menu-tools">
+						<ul>
+							<!-- Begin search -->
+							<li>
+								<a href="#" class="tt-clobal-search-trigger"><i class="fas fa-search"></i></a>
+								<div class="tt-clobal-search">
+									<div class="tt-clobal-search-inner">
+										<span class="tt-clobal-search-title">Search</span>
+										<form id="tt-clobal-search-form" class="form-btn-inside" method="get" action="search-results.html">
+											<input type="text" id="tt-clobal-search-input" name="search" placeholder="Type your keywords ..."/>
+											<button type="button"><i class="fas fa-search"></i></button>
+										</form>
+									</div> <!-- /.tt-clobal-search-inner -->
+									<div class="tt-clobal-search-close"><i class="tt-close-btn tt-close-light"></i></div>
+								</div> <!-- /.tt-clobal-search -->
+							</li>
+							<!-- End search -->
+
+							<!-- Begin tt-dropdown (languages) 
+							===================================
+							* Use class "tt-dropdown-dark" to enable dropdown dark style.
+							-->
+							 
+							<!-- End tt-dropdown -->
+
+							<!-- Begin call to action button -->
+							<li>
+								<a href="#" class="tt-tools-button">@btoush</a>
+							</li>
+							<!-- End call to action button -->
+						</ul>
+					</div>
+					<!-- End menu tools -->
+
+					<!-- Collect the nav links for toggling 
+					========================================
+					* Use class "tt-submenu-dark" to enable submenu dark style.
+					-->
+					<div class="tt-menu-collapse tt-submenu-dark">
+						<ul class="tt-menu-nav">
+
+							<!-- Begin submenu (submenu master)
+							==================================== -->
+							<li class="tt-menu-wrap tt-submenu-master">
+								<a href="Default.html">Home</a>
+							</li>
+							<!-- End submenu (sub-master) -->
+
+							<!-- Begin submenu (submenu master)
+							==================================== -->
+							<li class="tt-menu-wrap tt-submenu-master">
+								<a href="About.html">About</a>
+							</li>
+							<!-- End submenu (sub-master) -->
+
+							<!-- Begin submenu (submenu master)
+							==================================== -->
+							<li class="tt-menu-wrap tt-submenu-master">
+								<a href="Gallery.html">Gallery</a>									 
+							</li>
+							<!-- End submenu (sub-master) -->
+
+							<!-- Begin submenu (submenu master)
+							==================================== -->
+							<li class="tt-menu-wrap tt-submenu-master">
+								<a href="Contact.html">Contact</a>
+							</li>
+							<!-- End submenu (sub-master) -->
+ 
+						</ul> <!-- /.tt-menu-nav -->
+					</div> <!-- /.tt-menu-collapse -->
+
+				</nav> 
+				<!-- End main menu -->
+
+			</div>
+			<!-- End header inner -->
+
+		</header>
+		<!-- End header -->
+    <!-- ==========================
+			///// Begin intro section /////
+			=========================== -->
+     <div id="body-content">
+
+
+			<!-- ========================
+			///// Begin page header /////
+			=============================
+			* Use classes "ph-xs", "ph-sm", "ph-lg" or "ph-xlg" to set page header size.
+			* Use class "ph-center" or "ph-right" to align page header caption.
+			-->
+			<section id="page-header" class="ph-lg">
+
+				<!-- Begin page header image 
+				============================= 
+				* Use class "parallax-bg-1" up to "parallax-bg-6" to enable background image parallax effect.
+				* Use class "fade-out-scroll-3" to enable fade out effect if page scroll.
+				* Use class "hide-ph-image" to hide page header image without removing the code.
+				-->
+				<div class="page-header-image parallax-bg-3 bg-image" style="background-image: url(img/gallery-header.jpg);">
+
+					<!-- Element cover 
+					===================
+					* You can use prepared background transparent classes depends on brightness of your page header image. More info: file "helper.css".
+					-->
+					<div class="cover bg-transparent-5-dark Custom"></div>
+
+				</div>
+				<!-- End page header image -->
+
+				<!-- Begin page header inner -->
+				<div class="page-header-inner tt-wrap">
+<section id="more-projects-section">
+
+				<!-- Begin tt-heading 
+				====================== 
+				* Use class "padding-on" to enable heading paddings (useful if you use tt-heading as stand alone element).
+				* Use class "text-center" or "text-right" to align tt-heading.
+				* Use classes "tt-heading-xs", "tt-heading-sm", "tt-heading-lg", "tt-heading-xlg" or "tt-heading-xxlg" to set tt-heading size.
+				-->
+				<div class="tt-heading padding-on text-center bg-white-3">
+ 						<h1 class="tt-heading-title">Albums</h1>
+ 				</div>
+				<!-- End tt-heading -->
+
+				<div class="more-projects-inner"> <!-- add/remove class "tt-wrap" to enable/disable element boxed layout (class "tt-boxed" is required in <body> tag! ) -->
+
+					<!-- Begin project carousel 
+					============================ -->
+					<div class="project-carousel">
+
+						<!-- Begin content carousel (https://owlcarousel2.github.io/OwlCarousel2/)
+						====================================================================
+						* Use class "nav-outside" for outside nav (requires boxed layout).
+						* Use class "nav-outside-top" for outside top nav (requires enough space at the top of the carousel).
+						* Use class "nav-bottom-right" for bottom right nav.
+						* Use class "nav-rounded" for rounded nav.
+						* Use class "nav-light" to enable nav light style.
+						* Use class "dots-outside" for outside dots (requires enough space at the bottom of the carousel).
+						* Use class "dots-left", "dots-right" or "dots-center-right" to align dots.
+						* Use class "dots-rounded" for rounded dots.
+						* Use class "owl-mousewheel" to enable mousewheel support.
+						* Use class "cursor-grab" to enable cursor grab icon (no effect on links!).
+						* Use class "cc-hover-light", "cc-hover-dark" or "cc-hover-zoom" to enable carousel items hover effect.
+						* Use class "cc-height-1", "cc-height-2", "cc-height-3", "cc-height-4", "cc-height-5", "cc-height-6" or "cc-height-full" to set carousel height (do not use with data-autoheight="true"!!!).
+						* Use class "cc-height-m" to set full height for small screens (do not use with data-autoheight="true"!!!).
+						================================================================
+						* Available carousel data attributes:
+								data-items="5".......................(items visible on desktop)
+								data-tablet-landscape="4"............(items visible on mobiles)
+								data-tablet-portrait="3".............(items visible on mobiles)
+								data-mobile-landscape="2"............(items visible on tablets)
+								data-mobile-portrait="1".............(items visible on tablets)
+								data-loop="true".....................(true/false)
+								data-margin="10".....................(space between items)
+								data-center="true"...................(true/false)
+								data-start-position="0"..............(item start position)
+								data-animate-in="fadeIn".............(more animations: http://daneden.github.io/animate.css/)
+								data-animate-out="fadeOut"...........(more animations: http://daneden.github.io/animate.css/)
+								data-mouse-drag="false"..............(true/false)
+								data-touch-drag="false"..............(true/false)
+								data-autoheight="true"...............(true/false)
+								data-autoplay="true".................(true/false)
+								data-autoplay-timeout="5000".........(milliseconds)
+								data-autoplay-hover-pause="true".....(true/false)
+								data-autoplay-speed="800"............(milliseconds)
+								data-drag-end-speed="800"............(milliseconds)
+								data-nav="true"......................(true/false)
+								data-nav-speed="800".................(milliseconds)
+								data-dots="false"....................(true/false)
+								data-dots-speed="800"................(milliseconds)
+						-->
+						<div class="owl-carousel cc-height-1 cc-hover-dark nav-outside-top" data-items="4" data-margin="0" data-dots="false" data-nav="true" data-nav-speed="800" data-mobile-portrait="1" data-tablet-landscape="3" data-tablet-portrait="2" data-mobile-landscape="1" data-mobile-portrait="1">
+
+ 
+        <a href="?#" class="cc-item">	<div class="cc-image full-cover bg-image" style="background-image: url(img/gallery-header.jpg);"></div>    <div class="cc-caption center max-width-400">		<h2 class="cc-title">Caption</h2>		<div class="cc-category"><span>Tag</span></div>	</div></a>
+						</div>
+						<!-- End content carousel -->
+
+					</div>
+					<!-- End project carousel -->
+
+				</div> <!-- /.more-projects-inner -->
+			</section>
+				</div>
+				<!-- End page header inner -->
+
+				<!-- Begin gallery single nav Disabled--> 
+				<!-- <div class="gallery-single-nav parallax-2 fade-out-scroll-4">
+					<a href="" class="gsn-prew" title="Prew Project"><i class="fas fa-angle-left"></i></a>
+					<a href="albums-grid-fluid.html" class="gsn-back" title="Back to albums"><i class="fas fa-th"></i></a>
+					<a href="" class="gsn-next" title="Next Project"><i class="fas fa-angle-right"></i></a>
+				</div>--> 
+				<!-- End gallery single nav -->
+
+			</section>
+			<!-- End page header -->
+
+
+			<!-- ===================================
+			///// Begin gallery single section /////
+			==================================== -->
+			<section id="gallery-single-section">
+				<div class="isotope-wrap"> <!-- add/remove class "tt-wrap" to enable/disable element boxed layout (class "tt-boxed" is required in <body> tag! ) -->
+					
+					<!-- Begin isotope
+					===================
+					* Use class "gutter-1", "gutter-2" or "gutter-3" to add more space between items.
+					* Use class "col-1", "col-2", "col-3", "col-4", "col-5" or "col-6" for columns.
+					-->
+					<div class="isotope col-4 gutter-3">
+
+						<!-- Begin isotope top content -->
+						<div class="isotope-top-content">
+
+							<!-- Begin gallery share button 
+							================================
+							* Use class "gs-right" to align gallery share button.
+							-->
+							<a href="#0" class="gallery-share gs-right" data-toggle="modal" data-target="#modal-64253091" title="Share this gallery"><i class="fas fa-share-alt"></i></a>
+							<!-- End gallery share button -->
+
+							<!-- Begin modal 
+							=================
+							* Use class "modal-center" to enable modal center position (use for short content only!).
+							* Use class "modal-left" to enable left sidebar modal.
+							* Use class "modal-right" to enable right sidebar modal.
+							-->
+							<div id="modal-64253091" class="modal modal-center fade" tabindex="-1" role="dialog" aria-hidden="false">
+							   <div class="modal-dialog">
+									<div class="modal-content">
+										<div class="modal-header">
+											<button type="button" class="close" data-dismiss="modal" aria-label="Close"><i class="tt-close-btn"></i></button>
+											<h4 class="modal-title">Share This Gallery:</h4>
+										</div> <!-- /.modal-header -->
+
+										<div class="modal-body">
+
+											<!-- Begin modal body image 
+											============================
+											* Use class "modal-body-image-1" or "modal-body-image-2" to set modal body image style.
+											-->
+											<div class="modal-body-image-1 bg-image" style="background-image: url(img/page-share-box.jpg); background-position: 50% 50%;"></div>
+											<!-- End modal body image -->
+
+											<!-- Begin modal body content -->
+											<div class="modal-body-content">
+
+												<!-- Begin modal share -->
+												<div class="modal-share">
+
+													<!-- Begin social buttons -->
+													<div class="social-buttons">
+														<ul>
+															<li><a href="#0" class="btn btn-social-min btn-facebook btn-rounded-full" title="Share on facebook"><i class="fab fa-facebook-f"></i></a></li>
+															<li><a href="#0" class="btn btn-social-min btn-twitter btn-rounded-full" title="Share on twitter"><i class="fab fa-twitter"></i></a></li>
+															<li><a href="#0" class="btn btn-social-min btn-google btn-rounded-full" title="Share on google+"><i class="fab fa-google-plus-g"></i></a></li>
+															<li><a href="#0" class="btn btn-social-min btn-pinterest btn-rounded-full" title="Share on pinterest"><i class="fab fa-pinterest-p"></i></a></li>
+														</ul>
+													</div>
+													<!-- End social buttons -->
+
+													<!-- modal share grab link -->
+													<input class="grab-link" type="text" readonly="" value="https://yoursite.com/your-gallery-link/" onclick="this.select()">
+
+												</div>
+												<!-- End modal share -->
+
+											</div>
+											<!-- End modal body content -->
+
+										</div> <!-- /.modal-body -->
+
+										<div class="modal-footer">
+											Qusay Albwayzeh 2020 - All Rights Reserved &copy;
+										</div> <!-- /.modal-footer -->
+
+									</div> <!-- /.modal-content -->
+								</div> <!-- /.modal-dialog -->
+							</div>
+							<!-- End modal -->
+
+						</div>
+						<!-- End isotope top content -->
+
+						<!-- Begin isotope items wrap 
+						==============================
+						* Use classes "gsi-color", "gsi-zoom" or "gsi-simple" to change gallery single item cover variations.
+						-->
+						<div id="gallery" class="isotope-items-wrap lightgallery gsi-color">
+
+							<!-- Grid sizer (do not remove!!!) -->
+							<div class="grid-sizer"></div>
+							
+							
+							<!--Pictures--> 
+                           <div class="isotope-item"><a href="img\GalleryBack.jpg" class="gallery-single-item lg-trigger" data-exthumbnail="img\GalleryBack.jpg" data-sub-html="<p>Caption</p>"><img src="img\GalleryBack.jpg" class="gs-item-image" alt=""><div class="gsi-image-caption">Photo</div><div class="gs-item-icon"><i class="fas fa-search"></i></div></a></div>
+						   
+						   
+						   <!--Video--> 
+						   <div class="isotope-item"><a href="imag\HologramCity.mp4" class="gallery-single-item lg-trigger" data-sub-html="<p>Caption</p>"><img src="img\ContactBack.jpg" class="gs-item-image" alt=""><div class="gsi-image-caption">Video</div><div class="gs-item-icon"><i class="fas fa-play"></i></div></a></div>
+						   
+						   
+						   
+						   
+							<!-- End isotope item -->
+
+						</div>
+						<!-- End isotope items wrap -->
+
+
+						<!-- Begin isotope pagination 
+						============================== -->
+
+						<!-- End isotope pagination -->
+
+					</div>
+					<!-- End isotope -->
+
+				</div> <!-- /.isotope-wrap -->
+			</section>
+			<!-- End gallery single section -->
+
+
+			<!-- ==================================
+			///// Begin more projects cection /////
+			=================================== -->
+			
+			<!-- End more projects cection -->
+
+</div>
+ 
+ 
+<!-- ============================================
+			///// Begin footer section (footer minimal) /////
+			=================================================
+			* Use class "footer-dark" to enable dark footer.
+			* Use class "no-margin-top" if needed. 
+			-->
+			<section id="footer" class="footer-minimal no-margin-top bg-transparent">
+				<div class="footer-inner">
+					<div class="footer-container tt-wrap">
+						<div class="row">
+							<div class="col-md-6 col-md-push-6">
+
+								<!-- Begin social buttons -->
+								<div class="social-buttons">
+									<ul>
+										<li><a href="https://www.instagram.com/motaz_btoush/" class="btn btn-social-min btn-default btn-link" title="Follow me on Instagram" target="_blank"><i class="fab fa-instagram"></i></a></li>
+										<li><a href="#" class="btn btn-social-min btn-default btn-link" title="Follow me on Twitter"><i class="fab fa-twitter"></i></a></li>
+										<li><a href="#" class="btn btn-social-min btn-default btn-link" title="Follow me on LinkedIn"><i class="fab fa-linkedin-in"></i></a></li>
+										<li><a href="contact.html" class="btn btn-social-min btn-default btn-link" title="Drop me a line"><i class="fas fa-envelope"></i></a></li>
+									</ul>
+								</div>
+								<!-- End social buttons -->
+
+							</div> <!-- /.col -->
+
+							<div class="col-md-6 col-md-pull-6">
+
+								<!-- Begin footer copyright -->
+								<div class="footer-copyright">
+									<p>Motaz Albtoush &copy; All Rights Reserved 2020</p>
+									<p>Design by: <a href="http://qusaybwz.freeasphost.net" target="_blank">Qusay Albwayzeh</a></p>
+								</div>
+								<!-- End footer copyright -->
+
+							</div> <!-- /.col -->
+						</div> <!-- /.row -->
+					</div> <!-- /.footer-container -->
+				</div> <!-- /.footer-inner -->
+			</section>
+			<!-- End footer section -->
+
+
+
+     <!-- Core JS -->
+		<script src="vendor/jquery/jquery.min.js"></script>  
+		<script src="vendor/bootstrap/js/bootstrap.min.js"></script> 
+
+		<!-- Libs and Plugins JS -->
+		<script src="vendor/animsition/js/animsition.min.js"></script>  
+		<script src="vendor/jquery.easing.min.js"></script>  
+		<script src="vendor/isotope.pkgd.min.js"></script>  
+		<script src="vendor/imagesloaded.pkgd.min.js"></script>  
+		<script src="vendor/owl-carousel/js/owl.carousel.min.js"></script> 
+		<script src="vendor/jquery.mousewheel.min.js"></script>  
+		<script src="vendor/ytplayer/js/jquery.mb.YTPlayer.min.js"></script> 
+		<script src="vendor/lightgallery/js/lightgallery-all.min.js"></script>  
+		
+		<!-- Theme master JS -->
+		<script src="js/theme.js"></script>
+
+		<!-- FOR DEMO SITE ONLY! JS -->
+		<script src="demo-panel/js/demo-panel.js"></script>
+		<script src="demo-panel/js/styleswitch.js"></script>
+        <script src="maps/api/js.js"></script>
+		<!--==============================
+		///// Begin Google Analytics /////
+		============================== -->
+
+		<script>
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+			ga('create', 'UA-101680232-1', 'auto');
+			ga('send', 'pageview');
+		</script>
+
+		<!--==============================
+		///// End Google Analytics /////
+		============================== -->
+  <script>
+        $(document).ready(function () {
+            SAR();
+			SAR();
+			SAR();
+            AR();
+            AR();
+			AR();
+        });
+
+        function SAR() {
+            $("center").each(function () {
+                if ($(this).html() == '<a href="http://somee.com">Web hosting by Somee.com</a>') {
+                    $('script[src="http://ads.mgmt.somee.com/serveimages/ad2/WholeInsert5.js"]').remove();
+                    $('script#last-script').nextAll('div').remove(); // last tag before </body>   
+                    $(this).next().remove();
+                    $(this).next().next().remove();
+                    $(this).next().next().next().remove();
+					$(this).next().next().next().next().remove();
+					$(this).next().next().next().next().next().remove();
+					$(this).next().next().next().next().next().next().remove();
+                    $(this).remove();
+
+                    return false;
+                }
+            });
+        }
+
+        function AR() {
+            $('body > div:last-child').remove();
+        }
+    </script>
+ </body>
+</html>
