@@ -375,9 +375,13 @@
 		            speed: 200,
 		            loop:true,
 		            strings: [
- 		              'from Jordan , Amman',
-					  'Full Stack Developer',
-					  'very experienced in my business'
+					  'Welcome to my website, you are in a right way',
+ 		              'Nothing is impossible, The word itself says ‘I’m possible !',
+					  'Just spread love everywhere you go',
+					  'Weaknesses are just strengths in the wrong environment',
+					  'In a gentle way, you can shake the world',
+					  'Wake up determined, go to bed satisfied',
+					  'Life is like riding a bicycle, to keep your balance, you must keep moving'
  		            ],
 		            breakLines: false
 		        }); 
