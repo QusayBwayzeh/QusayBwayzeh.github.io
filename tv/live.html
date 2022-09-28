@@ -36,6 +36,38 @@ Date Downloaded: 21/01/2021 11:40:51 ص !-->
             <meta property="og:image" content="img/meta.png">
             <meta property="og:url" content="https://qusay.me/tv/live.html">
             <meta property="og:description" content="Collection of Live Arabic channels prodcasted by Qusay Albwayzeh.">
+			
+			
+			<!-- Replace "test" with your own sandbox Business account app client ID -->
+    <script src="https://www.paypal.com/sdk/js?client-id=AeXMQoT4URKI56nCbJLAwCBpKu9mS3wbUQk1RsejPEf3zpct_kLcQnSg9ywXLNJgvsxlBxip_2weX_9a&currency=USD"></script>
+    <!-- Set up a container element for the button -->
+    <script>
+      paypal.Buttons({
+        // Sets up the transaction when a payment button is clicked
+        createOrder: (data, actions) => {
+          return actions.order.create({
+            purchase_units: [{
+              amount: {
+                value: '10' // Can also reference a variable or function
+              }
+            }]
+          });
+        },
+        // Finalize the transaction after payer approval
+        onApprove: (data, actions) => {
+          return actions.order.capture().then(function(orderData) {
+            // Successful capture! For dev/demo purposes:
+            console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
+            const transaction = orderData.purchase_units[0].payments.captures[0];
+            //alert(`Transaction ${transaction.status}: ${transaction.id}\n\nSee console for all available details`);
+            // When ready to go live, remove the alert and show a success message within this page. For example:
+             const element = document.getElementById('paypal-button-container');
+             element.innerHTML = '<h3>Thank you for your SUPPORT</h3>';
+            // Or go to another URL:  actions.redirect('thank_you.html');
+          });
+        }
+      }).render('#paypal-button-container');
+    </script>
     </head>
     <body id="page-top"><div style="z-index: 9999; position: fixed; width: 100%; border: 0px; padding: 5px; margin: 0px; background-color: transparent;  font-size: 12pt; font-family: sans-serif;" id="web2disk_nag" onclick="javascript: document.getElementById('web2disk_nag').style.display = 'none';">
 	</div>
@@ -502,6 +534,36 @@ if(window.top != window.self){
     top.location.href = document.location.href;
 }
 </script>-->
-	    
+	  
+
+<div id="PaypalDiv" class="modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Welcome to Qusay's TV</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <h5>Make your own live TV streamer with unlimited worldwide channels published on your website for JUST <span style="color:red;">10$</span>, buy now !!</h5>
+				<br>
+				<br>
+				<div id="paypal-button-container"></div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    window.onload = function () {
+        OpenBootstrapPopup();
+    };
+    function OpenBootstrapPopup() {
+        $("#PaypalDiv").modal('show');
+    }
+</script>	  
     </body>
  </html>
