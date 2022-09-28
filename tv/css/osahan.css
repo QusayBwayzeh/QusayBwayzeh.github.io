@@ -1603,3 +1603,6 @@ Version: 1.0
 .fa, .fas {
      font-size: 2.0rem !important; 
 }
+.modal-dialog {
+     margin: 6rem auto;
+}
