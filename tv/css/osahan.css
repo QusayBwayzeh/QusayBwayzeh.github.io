@@ -26,7 +26,7 @@ Version: 1.0
 }
  body {
      background-color: #121212;
-     color: #888;
+     color: #000;
      font-size: 13px;
      height: 100%;
 }
@@ -75,7 +75,7 @@ Version: 1.0
     padding: 11px 0;
 }
 .modal-content {
-    background-color: #1c1c1c;
+     
 }
 .modal-header {
     border-bottom: 1px solid #2e2e2e;
@@ -606,17 +606,7 @@ Version: 1.0
      color: #ff253a !important;
 }
  .bg-secondary, .btn-secondary, .btn-outline-secondary:hover, .badge-secondary{
-     border-color: transparent !important;
-     background: #9ba8aa;
-    /* Old browsers */
-     background: -moz-linear-gradient(-45deg, #9ba8aa 0%, #92b4d2 100%);
-    /* FF3.6-15 */
-     background: -webkit-linear-gradient(-45deg, #9ba8aa 0%,#92b4d2 100%);
-    /* Chrome10-25,Safari5.1-6 */
-     background: linear-gradient(135deg, #9ba8aa 0%,#92b4d2 100%);
-    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9ba8aa', endColorstr='#92b4d2',GradientType=1 );
-    /* IE6-9 fallback on horizontal gradient */
+     
 }
  .btn-outline-secondary{
      border-color: #9ba8aa;
@@ -761,7 +751,7 @@ Version: 1.0
 }
 
  a:hover, h1, h2, h3, h4, h5, h6 {
-     color: #fff;
+     color: #000;
 }
  .upload-video .fas {
      font-size: 200px;
