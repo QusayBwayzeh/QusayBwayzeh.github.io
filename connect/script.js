@@ -33,7 +33,7 @@ function ajax_process_m3u8(t) {
 }
 
 function add_station(t, e, n) {
-    d = document.createElement("div"), $(d).addClass("station").html('<img src="' + n + '" alt="' + t + '" width="128">').appendTo($("#stations")).click(function() {
+    d = document.createElement("div"), $(d).addClass("station").html('<img src="' + n + '" alt="' + t + '" width="100" height="100">').appendTo($("#stations")).click(function() {
         load_m3u8(e)
     })
 }
