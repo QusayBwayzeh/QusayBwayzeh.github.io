@@ -16,6 +16,33 @@
             <meta property="og:description" content="Collection of live Arabic sports channels prodcasted by Qusay Albwayzeh.">
 	
     <title>JO Connect</title>
+	
+	
+	<script src="https://www.paypal.com/sdk/js?client-id=AeXMQoT4URKI56nCbJLAwCBpKu9mS3wbUQk1RsejPEf3zpct_kLcQnSg9ywXLNJgvsxlBxip_2weX_9a&currency=USD"></script>
+    <script>
+      paypal.Buttons({
+        createOrder: (data, actions) => {
+          return actions.order.create({
+            purchase_units: [{
+              amount: {
+                value: '15'
+              }
+            }]
+          });
+        },
+        onApprove: (data, actions) => {
+          return actions.order.capture().then(function(orderData) {
+            console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
+            const transaction = orderData.purchase_units[0].payments.captures[0];
+             const element = document.getElementById('paypal-button-container');
+             element.innerHTML = '<h3>Thank you for your subscription</h3>';
+          });
+        }
+      }).render('#paypal-button-container');
+    </script>
+	
+	
+	
 </head>
 <body>
     <div class="container">
@@ -42,5 +69,36 @@
 	
 	
 	<footer><h5>Jo Connect &copy; <a target="_blank" href="https://qusay.me">Qusay Albwayzeh</a> - 2022</h5></footer>
+	
+	
+	<div id="PaypalDiv" class="modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Welcome to JO Connect</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <h5>Make your own IPTV Player with all sports channels published on your website for JUST <span style="color:green;">15$</span>, buy now !!</h5>
+				<br>
+				<br>
+				<div id="paypal-button-container"></div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    window.onload = function () {
+        OpenBootstrapPopup();
+    };
+    function OpenBootstrapPopup() {
+        $("#PaypalDiv").modal('show');
+    }
+</script>	  
 </body>
 </html>
