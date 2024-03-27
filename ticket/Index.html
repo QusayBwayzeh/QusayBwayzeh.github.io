@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Ticket</title>
+    <style>
+        /* CSS styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            margin-top: 0;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        textarea {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Create Ticket</h1>
+        <form id="ticketForm">
+            <label for="subject">Subject:</label><br>
+            <input type="text" id="subject" name="subject" required><br>
+            <label for="details">Details:</label><br>
+            <textarea id="details" name="details" rows="4" required></textarea><br>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+<script>
+    // JavaScript for handling ticket submission
+    function submitTicket(event) {
+        event.preventDefault();
+
+        // Get form values
+        const subject = document.getElementById('subject').value;
+        const details = document.getElementById('details').value;
+
+        // Create ticket object
+        const ticket = {
+            subject: subject,
+            details: details
+        };
+
+        // Read existing tickets from the file
+        fetch('Ticket.txt')
+            .then(response => response.text())
+            .then(data => {
+                // Parse existing tickets (or initialize empty array)
+                const tickets = data ? JSON.parse(data) : [];
+
+                // Add new ticket to array
+                tickets.push(ticket);
+
+                // Write updated tickets back to the file
+                return fetch('Ticket.txt', {
+                    method: 'PUT',
+                    body: JSON.stringify(tickets),
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                });
+            })
+            .then(() => {
+                // Reset form
+                document.getElementById('ticketForm').reset();
+
+                // Optionally, you can redirect to the view tickets page
+                //window.location.href = 'view_tickets.html';
+            })
+            .catch(error => console.error('Error:', error));
+    }
+
+    // Event listener for ticket submission
+    document.getElementById('ticketForm').addEventListener('submit', submitTicket);
+</script>
+
+
+
+
+</body>
+</html>
