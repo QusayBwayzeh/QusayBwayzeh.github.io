@@ -671,6 +671,11 @@ h6 {
 /* Desktop
 --------------------*/
 @media (min-width: 992px) {
+
+  .navbar-brand {
+    width: 25% !important;
+  }
+
   .simple-dropdown {
     position: relative; }
     .simple-dropdown .m-dropdown-toggle {
@@ -6162,9 +6167,7 @@ h6 {
 
 /*# sourceMappingURL=master.css.map */
 
-.navbar-brand {
-  width: 35% !important;
-}
+
 
 .LogoWhite{
   width: 30% !important;
