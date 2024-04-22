@@ -86,7 +86,7 @@ Version: 1.0
 .close, .close:hover {
     color: #fff;
 }
- .scroll-to-top {
+ /* .scroll-to-top {
      background: rgba(52, 58, 64, 0.5) none repeat scroll 0 0;
      border-radius: 70px !important;
      bottom: 86px;
@@ -107,7 +107,7 @@ Version: 1.0
 }
  .scroll-to-top i {
      font-weight: 800;
-}
+} */
  .smaller {
      font-size: 0.7rem;
 }
