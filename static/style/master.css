@@ -676,6 +676,10 @@ h6 {
     width: 25% !important;
   }
 
+  .LogoWhiteFooter{
+    width: 15% !important;
+  }
+
   .simple-dropdown {
     position: relative; }
     .simple-dropdown .m-dropdown-toggle {
@@ -745,6 +749,10 @@ h6 {
 
   .navbar-brand {
     width: 60% !important;
+  }
+
+  .LogoWhiteFooter{
+    width: 30% !important;
   }
 
   .m-dropdown-toggle {
