@@ -16,11 +16,13 @@ Version: 1.0
 
   // Prevent the content wrapper from scrolling when the fixed side navigation hovered over
   $('body.fixed-nav .sidebar').on('mousewheel DOMMouseScroll wheel', function(e) {
-    var delta = e.originalEvent.wheelDelta || -e.originalEvent.detail;
-    this.scrollTop += (delta < 0 ? 1 : -1) * 30;
-    e.preventDefault();
+    if ($window.width() > 768) {
+      var e0 = e.originalEvent,
+        delta = e0.wheelDelta || -e0.detail;
+      this.scrollTop += (delta < 0 ? 1 : -1) * 30;
+      e.preventDefault();
+    }
   });
-  
 
   // Category Owl Carousel
   const objowlcarousel = $('.owl-carousel-category');
