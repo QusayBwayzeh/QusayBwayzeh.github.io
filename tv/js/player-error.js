@@ -6,7 +6,7 @@ var ErrorPlugin = Clappr.ContainerPlugin.extend({
   show: function() {
     var $ = Clappr.$
     this.hide();
-    var txt = (this.options.errorPlugin && this.options.errorPlugin.text) ? this.options.errorPlugin.text : 'IPTV Channel Encountered Error';
+    var txt = (this.options.errorPlugin && this.options.errorPlugin.text) ? this.options.errorPlugin.text : 'IPTV Channel Streaming Error';
     this._err = $('<div>')
       .css({
         'position': 'absolute',
@@ -26,7 +26,7 @@ var ErrorPlugin = Clappr.ContainerPlugin.extend({
         .css({
           'font-size': '200%',
         }))
-      .append($('<p>').html('Retry this channel in few minutes or report to your IPTV provider.')
+      .append($('<p>').html('Retry this channel in few minutes or report to Qusay\'s IPTV provider.')
         .css({
           'font-size': '120%',
           'margin': '15px',
