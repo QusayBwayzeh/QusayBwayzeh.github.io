@@ -737,6 +737,11 @@ h6 {
 /* Mobile
 --------------------*/
 @media (max-width: 991px) {
+
+  .navbar-brand {
+    width: 60% !important;
+  }
+
   .m-dropdown-toggle {
     position: absolute;
     top: 0;
