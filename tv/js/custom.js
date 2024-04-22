@@ -8,21 +8,21 @@ Version: 1.0
   "use strict"; // Start of use strict
 
   // Toggle the side navigation
-  //  $(document).on('click', '#sidebarToggle', function(e) {
-  //   e.preventDefault();
-  //   $("body").toggleClass("sidebar-toggled");
-  //   $(".sidebar").toggleClass("toggled");
-  // });
+   $(document).on('click', '#sidebarToggle', function(e) {
+    e.preventDefault();
+    $("body").toggleClass("sidebar-toggled");
+    $(".sidebar").toggleClass("toggled");
+  });
 
   // Prevent the content wrapper from scrolling when the fixed side navigation hovered over
-  // $('body.fixed-nav .sidebar').on('mousewheel DOMMouseScroll wheel', function(e) {
-  //   if ($window.width() > 768) {
-  //     var e0 = e.originalEvent,
-  //       delta = e0.wheelDelta || -e0.detail;
-  //     this.scrollTop += (delta < 0 ? 1 : -1) * 30;
-  //     e.preventDefault();
-  //   }
-  // });
+  $('body.fixed-nav .sidebar').on('mousewheel DOMMouseScroll wheel', function(e) {
+    if ($window.width() > 768) {
+      var e0 = e.originalEvent,
+        delta = e0.wheelDelta || -e0.detail;
+      this.scrollTop += (delta < 0 ? 1 : -1) * 30;
+      e.preventDefault();
+    }
+  });
 
   // Category Owl Carousel
   const objowlcarousel = $('.owl-carousel-category');
@@ -48,7 +48,7 @@ Version: 1.0
       autoplay: true,
       autoplaySpeed: 1000,
       autoplayTimeout: 2000,
-      autoplayHoverPause: true,
+      //autoplayHoverPause: true,
       nav: true,
       navText:["<i class='fa fa-chevron-left'></i>", "<i class='fa fa-chevron-right'></i>"],
     });
@@ -64,7 +64,7 @@ Version: 1.0
       autoplay: true,
       autoplaySpeed: 1000,
       autoplayTimeout: 2000,
-      autoplayHoverPause: true,
+      //autoplayHoverPause: true,
     });
   }
 
