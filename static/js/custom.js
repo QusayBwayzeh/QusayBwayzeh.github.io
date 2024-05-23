@@ -375,13 +375,16 @@
 		            speed: 200,
 		            loop:true,
 		            strings: [
-					  'Welcome to my website, you are in a right way',
- 		              'Nothing is impossible, The word itself says ‘I’m possible !',
-					  'Just spread love everywhere you go',
-					  'Weaknesses are just strengths in the wrong environment',
-					  'In a gentle way, you can shake the world',
-					  'Wake up determined, go to bed satisfied',
-					  'Life is like riding a bicycle, to keep your balance, you must keep moving'
+					  'Senior Software Engineer',
+ 		              'Microsoft | .Net | Azure | Integration',
+					  'Developing innovative programs',
+					  'That expedite the efficiency and effectiveness of organizational success',
+					  'Well-versed in technology and writing code',
+					  'Creating systems that are reliable and user-friendly',
+					  'Highly experienced in all aspects of the software development lifecycle',
+					  'End-to-End project management',
+					  'Confident communicator, strategic thinker, and innovative creator',
+					  'Microsoft Azure Certified'
  		            ],
 		            breakLines: false
 		        }); 
