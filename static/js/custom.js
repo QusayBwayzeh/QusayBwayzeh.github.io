@@ -376,15 +376,15 @@
 		            loop:true,
 		            strings: [
 					  'Senior Software Engineer',
- 		              'Microsoft | .Net | Azure | Integration',
+					  'Microsoft Azure Certified',
+ 		              'ASP.net | MS Azure | Full Stack | Integration',
 					  'Developing innovative programs',
-					  'That expedite the efficiency and effectiveness of organizational success',
+					  'Expedite the efficiency and effectiveness of organizational success',
 					  'Well-versed in technology and writing code',
 					  'Creating systems that are reliable and user-friendly',
 					  'Highly experienced in all aspects of the software development lifecycle',
 					  'End-to-End project management',
-					  'Confident communicator, strategic thinker, and innovative creator',
-					  'Microsoft Azure Certified'
+					  'Confident communicator, strategic thinker, and innovative creator'
  		            ],
 		            breakLines: false
 		        }); 
