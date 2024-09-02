@@ -376,12 +376,13 @@
 		            loop:true,
 		            strings: [
 					  'Senior Software Engineer',
+					  'More that 7+ years experience in software development',
 					  'Microsoft Azure Certified',
  		              'ASP.net | MS Azure | Full Stack | Integration',
 					  'Developing innovative programs',
 					  'Expedite the efficiency and effectiveness of organizational success',
 					  'Well-versed in technology and writing code',
-					  'Creating systems that are reliable and user-friendly',
+					  'Creating reliable and user-friendly systems',
 					  'Highly experienced in all aspects of the software development lifecycle',
 					  'End-to-End project management',
 					  'Confident communicator, strategic thinker, and innovative creator'
