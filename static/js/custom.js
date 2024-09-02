@@ -376,7 +376,7 @@
 		            loop:true,
 		            strings: [
 					  'Senior Software Engineer',
-					  'More that 7+ years experience in software development',
+					  'More than 7+ years experience in software development',
 					  'Microsoft Azure Certified',
  		              'ASP.net | MS Azure | Full Stack | Integration',
 					  'Developing innovative programs',
