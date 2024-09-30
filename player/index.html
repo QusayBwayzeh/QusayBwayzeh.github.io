@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <!-- metas -->
+        <meta name="author" content="Qusay Albwayzeh">
+        <meta name="keywords" content="Qusay Albwayzeh">
+        <meta name="description" content="Qusay Albwayzeh">
+        <!-- title -->
+        <title>Qusay Media Player</title>
+        <!-- Favicon -->
+        <link rel="shortcut icon" type="image/x-icon" href="color.png">  
+	    <meta property="og:title" content="Qusay Media Player">
+        <meta property="og:type" content="Personal" />
+        <meta property="og:image" content="color.png">
+        <meta property="og:url" content="https://qusaybwayzeh.com/player">
+        <meta property="og:description" content="Qusay Media Player">
+		
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Clappr Player -->
+  <script type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/clappr@latest/dist/clappr.min.js">
+  </script>
+  
+  <style>
+    body {
+      background-color: #f8f9fa;
+      padding: 20px;
+    }
+
+    .player-container {
+      margin-top: 20px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      padding: 20px;
+      background-color: white;
+    }
+
+    #player {
+      height: 400px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Main Content -->
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-8 text-center">
+	    <img src="color.png" width="120px"/>
+        <h1 class="mb-4">Qusay Media Player</h1>
+
+        <!-- URL Input and Button -->
+        <div class="input-group mb-4">
+          <input type="text" id="urlInput" class="form-control" placeholder="Enter a media URL (Video, Audio, IPTV)" aria-label="Media URL">
+          <div class="input-group-append">
+            <button class="btn btn-primary" type="button" onclick="loadURL()">Play</button>
+          </div>
+        </div>
+
+        <!-- Player Section -->
+        <div class="player-container">
+          <div id="player"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+  var player;  // Declare player variable globally
+
+  function loadURL() {
+  var url = document.getElementById("urlInput").value;
+  if (url) {
+    if (player) {
+      // Destroy the existing player before creating a new one
+      player.destroy();
+    }
+    // Create a new player instance with the input URL
+    player = new Clappr.Player({source: url, parentId: "#player"});
+    } else {
+      alert("Please enter a URL.");
+    }
+  }
+
+
+    // Default player load
+    var player = new Clappr.Player({
+     source: "https://ammantv-live.ercdn.net/ammantvhd/ammantvhd.m3u8", 
+      parentId: "#player"
+    });
+  </script>
+
+  <!-- Bootstrap JS (Optional for interactive components like modals) -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+<!-- Footer -->
+<footer class="text-center mt-5 py-3">
+  <p>Qusay Media Player © 2024</p>
+  <p>Developed by <a href="https://qusaybwayzeh.com" target="_blank">Qusay Albwayzeh</a></p>
+</footer>
+</html>
