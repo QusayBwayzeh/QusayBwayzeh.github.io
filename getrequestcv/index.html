@@ -68,8 +68,8 @@
                     <tr>
                         <th>ID</th>
                         <th>Name</th>
-                        <th>Email</th>
-                        <th>Message</th>
+                        <th>Justification</th>
+                        <th>Mobile Number</th>
                         <th>Date</th>
                     </tr>
                 </thead>
@@ -114,8 +114,8 @@
                     <tr>
                         <td>${item.id}</td>
                         <td>${item.name}</td>
-                        <td>${item.email}</td>
-                        <td>${item.message}</td>
+                        <td>${item.justification}</td>
+                        <td>${item.mobileNumber}</td>
                         <td>${new Date(item.createdAt).toLocaleString()}</td>
                     </tr>
                 `;
@@ -125,3 +125,4 @@
     </script>
 </body>
 </html>
+<!--get + last 4 nums of 8 -->
