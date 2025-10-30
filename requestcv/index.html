@@ -102,11 +102,11 @@
       };
 
       try {
-        const response = await fetch("http://requestcv.runasp.net/api/request", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(requestData)
-        });
+        const response = await fetch("https://requestcv.runasp.net/api/request", {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify(requestData)
+});
 
         if (response.ok) {
           const result = await response.json();
