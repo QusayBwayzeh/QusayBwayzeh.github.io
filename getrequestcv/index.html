@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RequestCV - View Requests</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6f8;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 8px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        #passwordSection, #dataSection {
+            margin-top: 20px;
+        }
+        input[type=password] {
+            padding: 8px;
+            font-size: 16px;
+        }
+        button {
+            padding: 8px 12px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #333;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📋 All Requests</h1>
+
+        <div id="passwordSection">
+            <p>Enter password to view records:</p>
+            <input type="password" id="passwordInput" placeholder="Enter password" />
+            <button onclick="checkPassword()">Submit</button>
+            <p id="error" style="color:red; display:none;">Incorrect password</p>
+        </div>
+
+        <div id="dataSection" style="display:none;">
+            <table id="requestsTable">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Message</th>
+                        <th>Date</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        const correctPassword = "get9062"; // change this to your desired password
+        const apiUrl = "https://requestcv.runasp.net/api/request"; // use your API endpoint
+
+        function checkPassword() {
+            const input = document.getElementById("passwordInput").value;
+            const error = document.getElementById("error");
+
+            if (input === correctPassword) {
+                document.getElementById("passwordSection").style.display = "none";
+                document.getElementById("dataSection").style.display = "block";
+                loadData();
+            } else {
+                error.style.display = "block";
+            }
+        }
+
+        async function loadData() {
+            try {
+                const response = await fetch(apiUrl);
+                if (!response.ok) throw new Error("Failed to load data");
+                const data = await response.json();
+                bindTable(data);
+            } catch (err) {
+                alert("Error loading data: " + err.message);
+            }
+        }
+
+        function bindTable(data) {
+            const tbody = document.querySelector("#requestsTable tbody");
+            tbody.innerHTML = "";
+            data.forEach(item => {
+                const row = `
+                    <tr>
+                        <td>${item.id}</td>
+                        <td>${item.name}</td>
+                        <td>${item.email}</td>
+                        <td>${item.message}</td>
+                        <td>${new Date(item.createdAt).toLocaleString()}</td>
+                    </tr>
+                `;
+                tbody.innerHTML += row;
+            });
+        }
+    </script>
+</body>
+</html>
