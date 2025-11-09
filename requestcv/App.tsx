@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Header from './components/Header';
 import RequestForm from './components/RequestForm';
 import AdminView from './components/AdminView';
@@ -7,17 +7,33 @@ export type View = 'form' | 'admin';
 
 const App: React.FC = () => {
   const [currentView, setCurrentView] = useState<View>('form');
+  const [isAnimating, setIsAnimating] = useState(false);
+  const [displayView, setDisplayView] = useState<View>('form');
+
+  const handleSetView = (view: View) => {
+    if (view === currentView) return;
+    setIsAnimating(true);
+    setCurrentView(view);
+  };
+
+  useEffect(() => {
+    if (isAnimating) {
+      const timer = setTimeout(() => {
+        setDisplayView(currentView);
+        setIsAnimating(false);
+      }, 200); // Half of the animation duration
+      return () => clearTimeout(timer);
+    }
+  }, [isAnimating, currentView]);
 
   return (
-    <div className="min-h-screen bg-background text-on-surface-variant font-sans">
-      <Header currentView={currentView} setCurrentView={setCurrentView} />
-      <main className="p-4 sm:p-6 lg:p-8">
-        {currentView === 'form' && <RequestForm />}
-        {currentView === 'admin' && <AdminView />}
+    <div>
+      <Header currentView={currentView} setCurrentView={handleSetView} />
+      <main className="container my-4">
+        <div className={`view-container ${isAnimating ? 'fade-out' : 'fade-in'}`}>
+            {displayView === 'form' ? <RequestForm /> : <AdminView />}
+        </div>
       </main>
-      <footer className="text-center p-4 text-gray-500 text-sm">
-        <p>&copy; {new Date().getFullYear()} CV Request Portal. All rights reserved.</p>
-      </footer>
     </div>
   );
 };

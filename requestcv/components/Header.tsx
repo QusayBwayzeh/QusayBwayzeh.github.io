@@ -1,7 +1,5 @@
 import React from 'react';
 import type { View } from '../App';
-import { DocumentIcon } from './icons/DocumentIcon';
-import { AdminIcon } from './icons/AdminIcon';
 
 interface HeaderProps {
   currentView: View;
@@ -9,47 +7,34 @@ interface HeaderProps {
 }
 
 const Header: React.FC<HeaderProps> = ({ currentView, setCurrentView }) => {
-  const navItemClasses = "flex items-center space-x-2 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200";
-  const activeClasses = "bg-primary text-black";
-  const inactiveClasses = "text-on-surface-variant hover:bg-surface/50 hover:text-on-surface";
-
   return (
-    <header className="bg-surface shadow-lg border-b border-outline">
-      <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
-          <div className="flex items-center">
-            <div className="flex-shrink-0">
-              <h1 className="text-2xl font-bold text-on-surface tracking-wider">RequestCV</h1>
-            </div>
-          </div>
-          <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-4">
+    <header className="navbar navbar-expand-sm navbar-dark bg-secondary border-bottom border-dark shadow-sm">
+      <div className="container">
+        <a className="navbar-brand fw-bold fs-4" href="#">Qusay's CV</a>
+        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span className="navbar-toggler-icon"></span>
+        </button>
+        <div className="collapse navbar-collapse" id="navbarNav">
+          <ul className="navbar-nav ms-auto nav-pills">
+            <li className="nav-item">
               <button
                 onClick={() => setCurrentView('form')}
-                className={`${navItemClasses} ${currentView === 'form' ? activeClasses : inactiveClasses}`}
+                className={`nav-link ${currentView === 'form' ? 'active' : ''}`}
               >
-                <DocumentIcon className="h-5 w-5" />
-                <span>Request Form</span>
+                <i className="bi bi-file-earmark-text me-1"></i> Request Form
               </button>
+            </li>
+            <li className="nav-item ms-sm-2 mt-2 mt-sm-0">
               <button
                 onClick={() => setCurrentView('admin')}
-                className={`${navItemClasses} ${currentView === 'admin' ? activeClasses : inactiveClasses}`}
+                className={`nav-link ${currentView === 'admin' ? 'active' : ''}`}
               >
-                <AdminIcon className="h-5 w-5" />
-                <span>Admin View</span>
+                <i className="bi bi-shield-lock me-1"></i> Admin View
               </button>
-            </div>
-          </div>
-           <div className="md:hidden flex items-center">
-            <button onClick={() => setCurrentView('form')} className={`p-2 rounded-md ${currentView === 'form' ? 'text-black bg-primary' : 'text-on-surface-variant'}`}>
-                <DocumentIcon className="h-6 w-6" />
-            </button>
-             <button onClick={() => setCurrentView('admin')} className={`p-2 rounded-md ${currentView === 'admin' ? 'text-black bg-primary' : 'text-on-surface-variant'}`}>
-                <AdminIcon className="h-6 w-6" />
-            </button>
-           </div>
+            </li>
+          </ul>
         </div>
-      </nav>
+      </div>
     </header>
   );
 };

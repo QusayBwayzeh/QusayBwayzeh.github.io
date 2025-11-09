@@ -1,131 +1,105 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-bs-theme="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Request for Qusay's CV</title>
-<!-- Favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="https://qusaybwayzeh.com/static/img/qicon.ico">
-  <!-- Bootstrap for elegant design -->
-  <link
-    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-    rel="stylesheet"
-  />
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  
   <style>
+    /* Custom Dark & Gold Theme with Enhancements */
+    :root {
+      --bs-body-bg: #141414; /* Matched to qusaybwayzeh.com */
+      --bs-body-color: #e0e0e0;
+      --bs-primary: #FFD700; /* Vibrant Gold */
+      --bs-secondary: #212529; /* Darker Gray */
+      
+      --bs-card-bg: #1e1e1e;
+      --bs-card-border-color: #343a40;
+      --bs-border-color: #495057;
+
+      --bs-form-control-bg: #2c3034;
+      --bs-form-control-color: var(--bs-body-color);
+      --bs-form-control-border-color: #495057;
+      
+      --bs-btn-color: #121212;
+      --bs-btn-bg: var(--bs-primary);
+      --bs-btn-border-color: var(--bs-primary);
+      --bs-btn-hover-color: #121212;
+      --bs-btn-hover-bg: #ffe033;
+      --bs-btn-hover-border-color: #ffd81a;
+      --bs-btn-active-color: #121212;
+      --bs-btn-active-bg: #ffe24d;
+      --bs-btn-active-border-color: #ffd81a;
+      --bs-btn-focus-shadow-rgb: 255, 215, 0;
+
+      --bs-nav-pills-link-active-bg: var(--bs-primary);
+      --bs-nav-pills-link-active-color: #121212;
+      
+      --bs-alert-bg: transparent;
+    }
+
     body {
-      background: #f4f7fb;
-      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
+        background-color: var(--bs-body-bg);
+        background-image: radial-gradient(circle at top, rgba(255, 215, 0, 0.05), transparent 30%);
     }
 
-    .card {
-      width: 400px;
-      border-radius: 16px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    .form-control:focus, .form-select:focus {
+        border-color: var(--bs-primary);
+        box-shadow: 0 0 0 0.2rem rgba(var(--bs-btn-focus-shadow-rgb), 0.35), 0 0 0.5rem rgba(var(--bs-btn-focus-shadow-rgb), 0.2);
+    }
+    
+    .input-group-text {
+        background-color: #343a40;
+        border-color: #495057;
     }
 
-    .btn-primary {
-      width: 100%;
-      border-radius: 8px;
+    /* Animation for view transitions */
+    .view-container {
+        transition: opacity 0.4s ease-in-out;
+    }
+    .view-container.fade-out {
+        opacity: 0;
+    }
+    .view-container.fade-in {
+        opacity: 1;
     }
 
-    .alert {
-      margin-top: 20px;
-      display: none;
+    /* Animated Alert */
+    .alert-enter {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    .alert-enter-active {
+        opacity: 1;
+        transform: translateY(0);
+        transition: opacity 300ms, transform 300ms;
     }
   </style>
-</head>
 
-<body>
-  <div class="card p-4">
-    <h4 class="text-center mb-3 text-primary">Request for Qusay's CV</h4>
-    <form id="requestForm">
-      <div class="mb-3">
-        <label for="name" class="form-label">Full Name</label>
-        <input type="text" id="name" class="form-control" placeholder="Enter your full name" required />
-      </div>
-
-      <div class="mb-3">
-        <label for="justification" class="form-label">Justification</label>
-        <textarea
-          id="justification"
-          class="form-control"
-          rows="3"
-          placeholder="Why are you submitting this request?"
-          required
-        ></textarea>
-      </div>
-
-      <div class="mb-3">
-        <label for="mobileNumber" class="form-label">Mobile Number</label>
-        <input
-          type="text"
-          id="mobileNumber"
-          class="form-control"
-          placeholder="07XXXXXXXX"
-          pattern="07[0-9]{8}"
-          required
-        />
-      </div>
-
-      <button type="submit" class="btn btn-primary">Submit Request</button>
-    </form>
-
-    <div id="alertSuccess" class="alert alert-success text-center"></div>
-    <div id="alertError" class="alert alert-danger text-center"></div>
-  </div>
-
-  <script>
-    const form = document.getElementById("requestForm");
-    const alertSuccess = document.getElementById("alertSuccess");
-    const alertError = document.getElementById("alertError");
-
-    form.addEventListener("submit", async (e) => {
-      e.preventDefault();
-
-      // Clear previous alerts
-      alertSuccess.style.display = "none";
-      alertError.style.display = "none";
-
-      // Read values
-      const name = document.getElementById("name").value.trim();
-      const justification = document.getElementById("justification").value.trim();
-      const mobileNumber = document.getElementById("mobileNumber").value.trim();
-
-      // Build JSON object
-      const requestData = {
-        name: name,
-        justification: justification,
-        mobileNumber: mobileNumber
-      };
-
-      try {
-        const response = await fetch("https://requestcv.runasp.net/api/request", {
-  method: "POST",
-  headers: { "Content-Type": "application/json" },
-  body: JSON.stringify(requestData)
-});
-
-        if (response.ok) {
-          const result = await response.json();
-          alertSuccess.innerText = `Thank you, the request submitted successfully, you will receive the CV through WhatsApp once the request is approved`;
-          alertSuccess.style.display = "block";
-          form.reset();
-        } else {
-          const errorText = await response.text();
-          alertError.innerText = `Failed to submit, 'try' again later`;
-          alertError.style.display = "block";
-        }
-      } catch (err) {
-        alertError.innerText = `Network Error, 'try' again later`;
-        alertError.style.display = "block";
-      }
-    });
+  <script type="importmap">
+  {
+    "imports": {
+      "react": "https://aistudiocdn.com/react@^19.2.0",
+      "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+      "react/": "https://aistudiocdn.com/react@^19.2.0/",
+      "@google/genai": "https://aistudiocdn.com/@google/genai@^1.29.0"
+    }
+  }
   </script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body>
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <div id="root"></div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <!-- App Entry Point -->
+  <script type="module" src="/index.tsx"></script>
 </body>
 </html>
-
-
