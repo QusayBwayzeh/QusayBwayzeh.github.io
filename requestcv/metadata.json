@@ -1,0 +1,5 @@
+{
+  "name": "Request CV",
+  "description": "An application for recruiters to submit requests for a CV and for an administrator to review these requests after authenticating.",
+  "requestFramePermissions": []
+}
