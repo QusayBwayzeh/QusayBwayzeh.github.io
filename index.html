@@ -722,7 +722,7 @@
                                         </div>
                                         <div class="col-md-12">
                                             <div class="send">
-                                                <button class="m-btn m-btn-theme" type="submit" value="send" name="send">Send to QUSAY</button>
+                                                <button class="m-btn m-btn-theme" id="ContactBtn" type="submit" value="send" name="send">Send to QUSAY</button>
                                             </div>
                                         </div>
 
@@ -844,6 +844,7 @@
       e.preventDefault();
 
       // Clear previous alerts
+      document.getElementById("ContactBtn").disabled = true;
       alertSuccess.style.display = "none";
       alertError.style.display = "none";
 
@@ -880,6 +881,7 @@
         alertError.innerText = `Network Error, 'try' again later`;
         alertError.style.display = "block";
       }
+      document.getElementById("ContactBtn").disabled = false;
     });
   </script>
 		<!--<script>
