@@ -714,8 +714,9 @@
 
                                     </div>
                                 </form>
-                                <div id="alertSuccess" class="alert alert-success text-center"></div>
-                                <div id="alertError" class="alert alert-danger text-center"></div>
+                                <br/>
+                                <div id="alertSuccess" class="alert alert-success text-center" style="display: none;"></div>
+                                <div id="alertError" class="alert alert-danger text-center" style="display: none;"></div>
                             </div>
                             <!-- end form -->
                         </div>
@@ -833,7 +834,7 @@
       alertError.style.display = "none";
 
       // Read values
-      const name = document.getElementById("name").value.trim();
+      const name = 'WSC: ' + document.getElementById("name").value.trim();
       const message = document.getElementById("message").value.trim();
       const email = document.getElementById("email").value.trim();
 
