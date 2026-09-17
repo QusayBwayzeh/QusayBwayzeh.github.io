@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="../static/img/qicon.ico">
+    <title>RequestCV - View Requests</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Work+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="../static/style/redesign.css" rel="stylesheet">
+</head>
+<body>
+    <div class="admin-wrap">
+        <a class="back-link" href="../">&larr; Back to Qusay's website</a>
+        <div class="admin-panel">
+            <span class="eyebrow">Admin</span>
+            <h1 class="section-title" style="margin-top:12px;">All CV Requests</h1>
+
+            <div id="passwordSection" style="margin-top:24px;">
+                <div class="field" style="max-width:280px;">
+                    <label for="passwordInput">Enter password to view records</label>
+                    <input type="password" id="passwordInput" placeholder="Password">
+                </div>
+                <button class="btn btn-primary btn-sm" style="margin-top:14px;" onclick="checkPassword()">Submit</button>
+                <p id="error" class="inline-error">Incorrect password</p>
+            </div>
+
+            <div id="dataSection" style="display:none;margin-top:8px;">
+                <table class="admin-table" id="requestsTable">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Justification</th>
+                            <th>Mobile Number</th>
+                            <th>Date</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const cd = "get9062";
+        const apiUrl = "https://requestcv.runasp.net/api/request";
+
+        function checkPassword() {
+            const input = document.getElementById("passwordInput").value;
+            const error = document.getElementById("error");
+
+            if (input === cd) {
+                document.getElementById("passwordSection").style.display = "none";
+                document.getElementById("dataSection").style.display = "block";
+                loadData();
+            } else {
+                error.style.display = "block";
+            }
+        }
+
+        async function loadData() {
+            try {
+                const response = await fetch(apiUrl);
+                if (!response.ok) throw new Error("Failed to load data");
+                const data = await response.json();
+                bindTable(data);
+            } catch (err) {
+                alert("Error loading data: " + err.message);
+            }
+        }
+
+        function bindTable(data) {
+            const tbody = document.querySelector("#requestsTable tbody");
+            tbody.innerHTML = "";
+            data.forEach(item => {
+                const row = document.createElement("tr");
+                const cells = [item.id, item.name, item.justification, item.mobileNumber, new Date(item.createdAt).toLocaleString()];
+                cells.forEach(text => {
+                    const td = document.createElement("td");
+                    td.textContent = text;
+                    row.appendChild(td);
+                });
+                tbody.appendChild(row);
+            });
+        }
+    </script>
+</body>
+</html>
