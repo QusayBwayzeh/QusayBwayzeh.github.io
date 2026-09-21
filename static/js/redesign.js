@@ -21,12 +21,12 @@
   var roleEl = document.getElementById("heroRole");
   if (roleEl) {
     var roles = [
-      "Technical Team Lead",
+      "Technical Team Leader",
       "Senior Software Engineer",
-      "Full-Stack Developer",
+      "Creative Full-Stack Developer",
       "Solutions Architect",
-      ".NET Core Expert",
-      "Technical Trainer"
+      "AI-Assisted Developer",
+      "Professional Technical Trainer"
     ];
     var roleIndex = 0;
     setInterval(function () {
