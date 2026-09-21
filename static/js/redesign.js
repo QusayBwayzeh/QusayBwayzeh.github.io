@@ -63,7 +63,7 @@
             if (entry.isIntersecting) {
               var el = entry.target;
               var target = parseInt(el.getAttribute("data-count-to"), 10) || 0;
-              animateValue(el, target, 900);
+              animateValue(el, target, 2000);
               observer.unobserve(el);
             }
           });
