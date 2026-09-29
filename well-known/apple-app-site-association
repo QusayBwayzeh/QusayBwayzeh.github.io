@@ -1,0 +1,16 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "A429DZFTPA.com.estarta.hrms.mobile",
+        "paths": [
+          "/Offboarding*",
+          "/offboarding*",
+          "/hrms/Offboarding*",
+          "/hrms/offboarding*"
+        ]
+      }
+    ]
+  }
+}

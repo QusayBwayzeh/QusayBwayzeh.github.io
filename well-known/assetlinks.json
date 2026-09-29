@@ -1,0 +1,14 @@
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.jo.estarta.hrms.hrms_mobile",
+      "sha256_cert_fingerprints": [
+        "7F:D6:97:98:47:5D:67:96:6E:62:F0:80:B2:AB:8E:5D:2D:BA:6D:BB:B7:89:C1:1B:6B:FD:63:2B:B6:B2:57:B6"
+      ]
+    }
+  }
+]
